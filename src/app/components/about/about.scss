@@ -1,0 +1,177 @@
+.whoami {
+  margin-bottom: 4rem;
+
+  .hero-container {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    background-color: var(--terminal-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    font-family: var(--font-mono);
+    border: 1px solid var(--border-color);
+
+    .profile-image {
+      .image-box {
+        width: 180px;
+        height: 180px;
+        background-color: #222;
+        border: 2px solid var(--accent-color);
+        border-radius: 4px;
+        position: relative;
+        overflow: hidden;
+        img{
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          display: block;
+        }
+
+        &::after {
+          content: "USER";
+          position: absolute;
+          bottom: 10px;
+          right: 10px;
+          color: var(--accent-color);
+          font-size: 0.7rem;
+        }
+      }
+    }
+
+    .hero-content {
+
+      color: var(--accent-color);
+      font-family: var(--font-mono);
+      .command {
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+      }
+
+      .name {
+        font-size: 2.5rem;
+        margin: 0 0 0.5rem;
+        font-weight: 700;
+      }
+
+      .role {
+        font-size: 1.1rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .details {
+        font-size: 0.9rem;
+        margin-bottom: 2rem;
+      }
+
+      .actions {
+        display: flex;
+        gap: 1rem;
+
+        .btn {
+          padding: 0.8rem 1.5rem;
+          border-radius: 4px;
+          cursor: pointer;
+          font-weight: bold;
+          font-size: 0.9rem;
+          transition: all 0.3s;
+          text-decoration: none;
+
+          &.primary {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            
+            &:hover {
+              background-color: var(--accent-color);
+              color: black;
+              box-shadow: 0 0 10px var(--accent-color);
+            }
+          }
+
+          &.secondary {
+            background-color: transparent;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+
+            &:hover {
+              background-color: var(--accent-color);
+              color: black;
+              box-shadow: 0 0 10px var(--accent-color);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.profile-description {
+  margin-bottom: 4rem;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+  font-size: 1rem;
+
+  .prompt {
+    font-size: 1.2rem;
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+  }
+
+  .bio-container {
+    background-color: var(--terminal-bg);
+    padding: 1rem;
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    line-height: 1.8;
+    color: var(--accent-color);
+
+    p {
+      margin-bottom: 1.5rem;
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+@media (max-width: 800px) {
+  .whoami .hero-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 1rem; 
+    
+    .profile-image {
+      .image-box {
+        margin: 0 auto; 
+      }
+    }
+
+    .hero-content {
+      width: 100%; 
+      box-sizing: border-box; 
+      padding: 0 0.5rem; 
+
+      .command {
+        font-size: 1.2rem; 
+      }
+      .name {
+        font-size: 2rem; 
+      }
+    }
+
+    .actions {
+      flex-direction: column; 
+      width: 100%; 
+      gap: 0.5rem; 
+      
+      .btn {
+        width: 100%; 
+        box-sizing: border-box;
+        white-space: nowrap; 
+        overflow: hidden; 
+        text-overflow: ellipsis;
+      }
+    }
+  }
+}
+
+

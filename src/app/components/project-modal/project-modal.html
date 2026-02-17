@@ -1,0 +1,30 @@
+
+
+<div class="modal-overlay" (click)="onClose()">
+    <!-- stopPropagation hindrar att modalen stängs när man klickar på innehållet -->
+    <div class="modal-content" (click)="$event.stopPropagation()">
+        <header>
+            <h2>{{ project?.name }}</h2>
+            <button class="close-btn" (click)="onClose()">&times;</button>
+        </header>
+
+        <div class="modal-body">
+            <!-- Bildgalleri - Vi använder image-container som matchar din SCSS -->
+            <div class="image-container" *ngIf="project?.images?.length">
+                <img *ngFor="let img of project?.images" [src]="img" alt="Screenshot av {{ project?.name }}"
+                    class="modal-img">
+            </div>
+
+            <p class="project-description">{{ project?.description }}</p>
+        </div>
+
+        <footer class="modal-footer">
+            <a *ngIf="project?.url" [href]="project?.url" target="_blank" rel="noopener noreferrer" class="github-btn">
+                <span class="icon">
+                    <svg-GitHubActions [size]="{width: 20, height: 20}"></svg-GitHubActions>
+                </span>
+                <span class="url-text">{{ project?.name }}.git</span>
+            </a>
+        </footer>
+    </div>
+</div>

@@ -1,0 +1,64 @@
+<section class="tech-stack">
+  <h2 class="prompt terminal-text"> TECH-STACK.JSON</h2>
+  <div class="json-container">
+    <div class="json-line">
+      <span class="key">"Languages"</span>:
+      <svg-TypeScript class="symbols" [size]="{width: 24, height: 24}"></svg-TypeScript><span class="value">"TypeScript"
+      </span>
+      <svg-CSharp class="symbols" [size]="{width: 24, height: 24}"></svg-CSharp><span class="value">"C#" </span>
+      <svg-JavaScript class="symbols" [size]="{width: 24, height: 24}"></svg-JavaScript><span class="value">"JavaScript"
+      </span>
+    </div>
+    <div class="json-line">
+      <span class="key">"Frameworks"</span>:
+      <svg-DotNET class="symbols" [size]="{width: 24, height: 24}"></svg-DotNET><span class="value">".NET" </span>
+      <svg-DotNET class="symbols" [size]="{width: 24, height: 24}"></svg-DotNET><span class="value">"ASP.NET" </span>
+      <svg-React class="symbols" [size]="{width: 24, height: 24}"></svg-React><span class="value">"React" </span>
+      <svg-Svelte class="symbols" [size]="{width: 24, height: 24}"></svg-Svelte><span class="value">"Svelte" </span>
+      <svg-Angular class="symbols" [size]="{width: 24, height: 24}"></svg-Angular><span class="value">"Angular" </span>
+      <svg-Vue class="symbols" [size]="{width: 24, height: 24}"></svg-Vue><span class="value">"Vue" </span>
+    </div>
+    <div class="json-line">
+      <span class="key">"Frontend"</span>:
+      <span class="symbols scss">❖</span> <span class="value">"Scss"</span>
+      <svg-CSSNew class="symbols" [size]="{width: 24, height: 24}"></svg-CSSNew><span class="value">"Css"</span>
+    </div>
+    <div class="json-line">
+      <span class="key">"Backend"</span>:
+      <svg-NodeJs class="symbols" [size]="{width: 24, height: 24}"></svg-NodeJs><span class="value">"Node.js" </span>
+      <svg-SQLite class="symbols" [size]="{width: 30, height: 30}"></svg-SQLite><span class="value">"SQLite" </span>
+      <span class="symbols dapper">D</span> <span class="value">"Dapper" </span>
+    </div>
+    <div class="json-line">
+      <span class="key">"Editor"</span>:
+      <svg-VisualStudioCode class="symbols" [size]="{width: 24, height: 24}"></svg-VisualStudioCode><span
+        class="value">"VS Code"</span>
+      <svg-VisualStudio class="symbols" [size]="{width: 24, height: 24}"></svg-VisualStudio><span class="value">"Visual
+        Studio 2022"</span>
+    </div>
+  </div>
+</section>
+
+<section class="project-showcase">
+  <h2 class="prompt terminal-text">PROJECT SHOWCASE</h2>
+  <div class="cards-grid">
+    <!-- <app-project-card *ngFor="let project of projects" [project]="project"></app-project-card> -->
+
+    <app-project-card *ngFor="let p of projects" [project]="p" (cardClick)="openProject(p)">
+    </app-project-card>
+
+    <!-- <div class="projects-grid"> -->
+    <!-- <app-project-card *ngFor="let project of projects" [project]="project" (cardClick)="openProject(project)">
+        </app-project-card> -->
+    <!--</div> -->
+  </div>
+
+  <!-- Modalen visas bara om selectedProject har ett värde -->
+
+  <app-project-modal *ngIf="selectedProject" [project]="selectedProject" (close)="closeModal()">
+  </app-project-modal>
+
+</section>
+
+<div class="terminal-footer">
+</div>
