@@ -1,6 +1,5 @@
 # Portfolio
-
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli).
+För Marcus Löf
 
 ## Development server
 
